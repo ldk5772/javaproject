@@ -1,0 +1,57 @@
+package Ex_Student;
+
+import java.util.ArrayList;
+
+public class EventMain {
+
+	ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+	ArrayList<Integer> list_x = new ArrayList<>();
+
+	public void delete_list(int idx) {
+		list.remove(idx);	//행 제거
+
+		for(int i = 0; i < list.size(); i++) {
+			list.get(i).remove(idx);	//열 제거
+		}
+	}//delete_list
+	
+	public void print() {
+		//System.out.println(list.size());
+		//System.out.println(list_x.size());
+
+		for(int i = 0; i < list.get(0).size(); i++) {
+			for(int j = 0; j < list.size(); j++) {
+				System.out.print(list.get(i).get(j));
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void main(String[] args) {
+	      EventMain e = new EventMain();
+	      ArrayList<Integer> arr1 = new ArrayList<>();
+	      ArrayList<Integer> arr2 = new ArrayList<>();
+	      ArrayList<Integer> arr3 = new ArrayList<>();
+	      
+	      e.list_x = new ArrayList<>();
+	      arr1.add(3);
+	      arr1.add(2);
+	      arr1.add(4);
+	      arr2.add(5);
+	      arr2.add(6);
+	      arr2.add(8);
+	      arr3.add(5);
+	      arr3.add(1);
+	      arr3.add(9);
+	      e.list.add(arr1);
+	      e.list.add(arr2);
+	      e.list.add(arr3);
+	      e.print();
+	      e.delete_list(1);
+	      e.print();
+
+
+
+	}//main
+
+}//class
